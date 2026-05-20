@@ -1,1 +1,26 @@
+# Academic Journals 分流
+# Update 20260424
 
+DOMAIN-SUFFIX, nature.com
+DOMAIN-SUFFIX, sciencedirect.com
+DOMAIN-SUFFIX, elsevier.com
+DOMAIN-SUFFIX, onlinelibrary.wiley.com
+DOMAIN-SUFFIX, wiley.com
+DOMAIN-SUFFIX, link.springer.com
+DOMAIN-SUFFIX, springernature.com
+DOMAIN-SUFFIX, springer.com
+DOMAIN-SUFFIX, tandfonline.com
+DOMAIN-SUFFIX, pubs.acs.org
+DOMAIN-SUFFIX, pubs.rsc.org
+DOMAIN-SUFFIX, ieee.org
+DOMAIN-SUFFIX, ieeexplore.ieee.org
+DOMAIN-SUFFIX, aip.scitation.org
+DOMAIN-SUFFIX, scitation.org
+DOMAIN-SUFFIX, annualreviews.org
+DOMAIN-SUFFIX, jstor.org
+DOMAIN-SUFFIX, cell.com
+DOMAIN-SUFFIX, science.org
+DOMAIN-SUFFIX, pnas.org
+DOMAIN-SUFFIX, doi.org
+DOMAIN-SUFFIX, crossref.org
+DOMAIN-SUFFIX, sustech.edu.cn
