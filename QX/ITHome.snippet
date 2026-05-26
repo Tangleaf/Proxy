@@ -1,0 +1,10 @@
+#!name=IT之家
+#!desc=仅移除信息流广告，不移除轮播图和置顶文章
+#!author=Tangleaf
+#!date=2026-05-27
+
+[rewrite_local]
+^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds) url script-response-body https://raw.githubusercontent.com/Tangleaf/Proxy/main/QX/ithome.js
+
+[mitm]
+hostname = napi.ithome.com
