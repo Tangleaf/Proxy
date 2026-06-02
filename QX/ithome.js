@@ -16,28 +16,42 @@
 
 const url = $request.url;
 if (!$response.body) $done({});
+
 let obj = JSON.parse($response.body);
 
-if (url.includes("/api/news/index") || url.includes("/api/topmenu/getfeeds")) {
+// 首页信息流
+if (
+  url.includes("/api/news/index") ||
+  url.includes("/api/topmenu/getfeeds")
+) {
   if (obj?.data?.list?.length > 0) {
-    let list = obj.data.list;
-    const newList = [];
-    for (let item of list) {
-      if (item?.feedContent?.smallTags?.some((i) => i?.text?.includes("广告"))) {
-        continue;
+
+    obj.data.list = obj.data.list.filter((item) => {
+
+      // 过滤带“广告”标签的信息流
+      if (
+        item?.feedContent?.smallTags?.some(
+          (i) => i?.text?.includes("广告")
+        )
+      ) {
+        return false;
       }
-      }
-      newList.push(item);
-    }
-    obj.data.list = newList;
+
+      // 不再过滤 10002 / 10003
+      // 这样首页轮播图会保留
+
+      return true;
+    });
   }
 }
 
-// 信息流618广告
+// 618 广告
 if (url.includes("/api/news/indexv2/iphone/927")) {
   if (obj?.data?.list?.length > 0) {
-    obj.data.list = obj.data.list.filter((item) => item?.feedType !== 10004);
+    obj.data.list = obj.data.list.filter(
+      (item) => item?.feedType !== 10004
+    );
   }
 }
 
-$done({body: JSON.stringify(obj)});
+$done({ body: JSON.stringify(obj) });
