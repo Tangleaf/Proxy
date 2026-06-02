@@ -26,8 +26,6 @@ if (url.includes("/api/news/index") || url.includes("/api/topmenu/getfeeds")) {
       if (item?.feedContent?.smallTags?.some((i) => i?.text?.includes("广告"))) {
         continue;
       }
-      if ([10002, 10003].includes(item?.feedType)) {
-        continue;
       }
       newList.push(item);
     }
