@@ -1,4 +1,3 @@
-```yaml
 name: WPS 签到与 Cookie 获取
 description: WPS 每日自动签到及 Cookie 获取模块。支持自定义签到时间及脚本响应等待时间。
 
@@ -57,4 +56,3 @@ mitm:
   hostnames:
     includes:
       - personal-act.wps.cn
-```
