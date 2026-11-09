@@ -1,35 +1,29 @@
-name: Apple Intelligence 分流
-description: Apple Intelligence、Siri 与 Private Cloud Compute 精简分流模块。
-author: Tangleaf
-homepage: https://github.com/Tangleaf/Proxy
-icon: apple.intelligence
+# AppleAI 分流规则
+# 上游：https://github.com/CaoXiaoMann/XiaoMan/blob/main/Egern/Rule/Apple-AI/Apple-AI.yaml
+# 更新日期：2026-10-31
+# 来源：RocM301/Apple-Rule (Apple Intelligence / Siri / Relay)
+# 说明：需走支持地区节点的代理组（如美国节点）
 
-compat_arguments:
-  TARGET_POLICY: "Proxy"
-
-compat_arguments_desc: "TARGET_POLICY：填写主配置中已有的策略或策略组名称，例如 Proxy、AI、美国节点。"
-
-rules:
-  - domain:
-      match: api-glb-sea.smoot.apple.com
-      policy: "{{{TARGET_POLICY}}}"
-
-  - domain_suffix:
-      match: smoot.apple.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      match: guzzoni.apple.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      match: apple-relay.apple.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      match: apple-relay.cloudflare.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      match: gateway.icloud.com
-      policy: "{{{TARGET_POLICY}}}"
-
-  - domain_keyword:
-      match: apple-relay
-      policy: "{{{TARGET_POLICY}}}"
+no_resolve: true
+domain_set:
+  - guzzoni.apple.com
+  - mask-api.fe.apple-dns.net
+  - mask-api.icloud.com
+  - mask-t.apple-dns.net
+  - mask.apple-dns.net
+  - wps.apple.com
+domain_suffix_set:
+  - apple-relay.apple.com
+  - apple-relay.cloudflare.com
+  - apple-relay.fastly-edge.com
+  - apple-relay.mask.apple-dns.net
+  - apps.mzstatic.com
+  - cp4.cloudflare.com
+  - gateway.icloud.com
+  - gspe1-ssl.ls.apple.com
+  - ls.apple.com
+  - mask-h2.icloud.com
+  - mask.icloud.com
+  - smoot.apple.com
+domain_keyword_set:
+  - siri
