@@ -1,5 +1,5 @@
 name: Apple Intelligence 分流
-description: Apple Intelligence、Siri、Private Cloud Compute、ChatGPT 扩展与视觉智能相关流量分流。仅负责网络路由，不改变设备、账号或地区资格。
+description: Apple Intelligence、Siri 与 Private Cloud Compute 精简分流模块。
 author: Tangleaf
 homepage: https://github.com/Tangleaf/Proxy
 icon: apple.intelligence
@@ -10,88 +10,26 @@ compat_arguments:
 compat_arguments_desc: "TARGET_POLICY：填写主配置中已有的策略或策略组名称，例如 Proxy、AI、美国节点。"
 
 rules:
-  # 地区检测与 Apple Intelligence 初始化
   - domain:
-      name: Apple Intelligence 地区检测
-      match: gspe1-ssl.ls.apple.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain:
-      name: Apple Intelligence 初始化
-      match: gateway.icloud.com
+      match: api-glb-sea.smoot.apple.com
       policy: "{{{TARGET_POLICY}}}"
 
-  # Siri、听写、Spotlight 与 Apple 搜索
-  - domain:
-      name: Siri 与听写
+  - domain_suffix:
+      match: smoot.apple.com
+      policy: "{{{TARGET_POLICY}}}"
+  - domain_suffix:
       match: guzzoni.apple.com
       policy: "{{{TARGET_POLICY}}}"
   - domain_suffix:
-      name: Siri 与 Apple 搜索
-      match: smoot.apple.com
-      policy: "{{{TARGET_POLICY}}}"
-
-  # Private Cloud Compute 与 Apple Intelligence 扩展
-  - domain:
-      name: Apple Intelligence Relay
       match: apple-relay.apple.com
       policy: "{{{TARGET_POLICY}}}"
-  - domain:
-      name: Apple Intelligence Cloudflare Relay
+  - domain_suffix:
       match: apple-relay.cloudflare.com
       policy: "{{{TARGET_POLICY}}}"
-  - domain:
-      name: Apple Intelligence Fastly Relay
-      match: apple-relay.fastly-edge.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain:
-      name: Apple Intelligence Cloudflare PCC
-      match: cp4.cloudflare.com
-      policy: "{{{TARGET_POLICY}}}"
   - domain_suffix:
-      name: Apple Intelligence Akamai Relay
-      match: apple-relay.akamaized.net
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: Apple Intelligence DNS Relay
-      match: apple-relay.mask.apple-dns.net
+      match: gateway.icloud.com
       policy: "{{{TARGET_POLICY}}}"
 
-  # ChatGPT 扩展
-  - domain_suffix:
-      name: ChatGPT
-      match: chatgpt.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: OpenAI
-      match: openai.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: OpenAI 静态资源
-      match: oaistatic.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: OpenAI 用户内容
-      match: oaiusercontent.com
-      policy: "{{{TARGET_POLICY}}}"
-
-  # 视觉智能 Google 搜索
-  - domain_suffix:
-      name: Google 搜索
-      match: google.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: Google 静态资源
-      match: gstatic.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: Google API
-      match: googleapis.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: Google 用户内容
-      match: googleusercontent.com
-      policy: "{{{TARGET_POLICY}}}"
-  - domain_suffix:
-      name: Google 图片
-      match: ggpht.com
+  - domain_keyword:
+      match: apple-relay
       policy: "{{{TARGET_POLICY}}}"
