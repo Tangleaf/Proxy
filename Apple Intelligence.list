@@ -1,0 +1,9 @@
+DOMAIN-SUFFIX,smoot.apple.com,OpenAI
+DOMAIN-SUFFIX,guzzoni.apple.com,OpenAI
+DOMAIN,api-glb-sea.smoot.apple.com,OpenAI
+
+DOMAIN-SUFFIX,apple-relay.apple.com,OpenAI
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,OpenAI
+DOMAIN-KEYWORD,apple-relay,OpenAI
+
+DOMAIN-SUFFIX,gateway.icloud.com,OpenAI
