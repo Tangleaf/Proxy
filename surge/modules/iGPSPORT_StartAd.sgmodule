@@ -1,0 +1,10 @@
+#!name=iGPSPORT 去开屏广告
+#!desc=仅拦截 iGPSPORT 的 GetStartAd 开屏广告请求；从墨鱼去开屏 Surge 转换规则单独提取。
+#!author=规则来源 ddgksf2013（墨鱼），独立整理 Tangleaf
+#!category=Advertising
+
+[URL Rewrite]
+^https?:\/\/prod\.zh\.igpsport\.com\/.+\/GetStartAd - reject-200
+
+[MITM]
+hostname = %APPEND% prod.zh.igpsport.com
