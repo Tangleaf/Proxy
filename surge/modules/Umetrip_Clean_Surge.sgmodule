@@ -1,0 +1,9 @@
+#!name=航旅纵横去广告与净化（Surge 适配）
+#!desc=Surge Protobuf 二进制响应清理脚本。需要开启 HTTPS 解密并信任证书。
+#!system=ios
+
+[Script]
+航旅纵横二进制净化 = type=http-response, pattern=^https:\/\/(sns|appmsg|umehome|opactivity|activity|umerp|umeflightstatus|umestartup)\.umetrip\.com/gateway/api/umetrip/native(\?|$), requires-body=true, binary-body-mode=true, max-size=10485760, timeout=10, script-path=https://raw.githubusercontent.com/Tangleaf/Proxy/main/surge/scripts/Umetrip_Clean_Surge.js
+
+[MITM]
+hostname = %APPEND% sns.umetrip.com, appmsg.umetrip.com, umehome.umetrip.com, opactivity.umetrip.com, activity.umetrip.com, umerp.umetrip.com, umeflightstatus.umetrip.com, umestartup.umetrip.com
