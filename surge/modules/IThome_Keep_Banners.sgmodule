@@ -1,0 +1,14 @@
+#!name=IT之家去广告（保留首页轮播图）
+#!desc=保留首页全部轮播图及置顶文章，仅过滤明确标记的普通信息流广告。请关闭原 IT之家去广告模块以免重复修改。
+#!author=Tangleaf (adapted from public IThome rules)
+#!category=Advertising
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
+
+[URL Rewrite]
+^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject
+
+[Script]
+IT之家保留轮播图 = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/topmenu\/getfeeds\?, requires-body=true, script-path=https://raw.githubusercontent.com/Tangleaf/Proxy/main/surge/scripts/IThome_Keep_Banners.js
+
+[MITM]
+hostname = %APPEND% napi.ithome.com, dat.ruanmei.com
