@@ -1,0 +1,5 @@
+# Duolingo direct routing for Surge
+# Main Duolingo domains; third-party shared CDNs are intentionally excluded.
+DOMAIN-SUFFIX,duolingo.com
+DOMAIN-SUFFIX,duolingo.cn
+DOMAIN-SUFFIX,duolingo.com.cn
