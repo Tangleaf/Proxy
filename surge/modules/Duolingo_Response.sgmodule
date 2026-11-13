@@ -1,0 +1,9 @@
+#!name=Duolingo Response Script
+#!desc=Duolingo response script for Surge. Use only if you trust the upstream script.
+#!system=ios
+
+[Script]
+Duolingo-Response = type=http-response, pattern=^https?:\/\/(ios-api-[a-z0-9-]+|api\d+)\.duolingo\.c(n|om)\/2023-05-23\/batch, requires-body=true, script-path=https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/main/lingoDuo/lingoDuo-xaM.js
+
+[MITM]
+hostname = %APPEND% *.duolingo.com, *.duolingo.cn
