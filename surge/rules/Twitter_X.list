@@ -1,0 +1,11 @@
+# Twitter / X routing rules for Surge
+# Apply via RULE-SET,<raw-url>,推特服务
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,t.co
+DOMAIN-SUFFIX,pscp.tv
+DOMAIN-SUFFIX,periscope.tv
+DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,twitpic.com
+DOMAIN-SUFFIX,twimg.org
