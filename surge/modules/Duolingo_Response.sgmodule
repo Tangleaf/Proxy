@@ -1,5 +1,5 @@
-#!name=Duolingo Response Script
-#!desc=Duolingo response script for Surge. Use only if you trust the upstream script.
+#!name=lingoDuo
+#!desc=Duolingo Surge Script
 #!system=ios
 
 [Script]
