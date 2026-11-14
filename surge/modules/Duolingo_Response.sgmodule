@@ -3,7 +3,7 @@
 #!system=ios
 
 [Script]
-Duolingo-Response = type=http-response, pattern=^https?:\/\/(ios-api-[a-z0-9-]+|api\d+)\.duolingo\.c(n|om)\/2023-05-23\/batch, requires-body=true, script-path=https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/main/lingoDuo/lingoDuo-xaM.js
+Duolingo-Response = type=http-response, max-size=2097152, timeout=60, pattern=^https?:\/\/(ios-api-[a-z0-9-]+|api\d+)\.duolingo\.c(n|om)\/2023-05-23\/batch, requires-body=true, script-path=https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/main/lingoDuo/lingoDuo-xaM.js
 
 [MITM]
 hostname = %APPEND% *.duolingo.com, *.duolingo.cn
